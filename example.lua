@@ -370,12 +370,12 @@ local function main()
         if not tag then
             tag = Instance.new("BillboardGui")
             tag.Name = "Ghost_NameTag"
-            tag.Size = UDim2.new(0, 230, 0, 42)
+            tag.Size = UDim2.new(0, 150, 0, 26)
             tag.StudsOffset = Vector3.new(0, 2.6, 0)
             tag.AlwaysOnTop = true
             tag.ClipsDescendants = false
             tag.Adornee = head
-            tag.Parent = head
+            tag.Parent = character
             local lbl = Instance.new("TextLabel")
             lbl.Name = "TagLabel"
             lbl.Size = UDim2.new(1, 0, 1, 0)
@@ -1617,11 +1617,7 @@ local function main()
                     end
 
                     if Config.Visuals.NameTags and character and alive and not inLobby then
-                        local tagText = player.Name
-                        if isM then tagText = "[M] " .. player.Name
-                        elseif isS then tagText = "[S] " .. player.Name
-                        elseif isH then tagText = "[H] " .. player.Name end
-                        applyNameTag(player, renderColor, tagText)
+                        applyNameTag(player, renderColor, player.Name)
                     else
                         removeNameTag(player)
                     end
