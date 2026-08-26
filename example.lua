@@ -1363,7 +1363,7 @@ local function main()
         local el = UI_Elements.Combat.ShootM
         if not el then return end
         local txt = T("ShootM") .. " [" .. (Config.Combat.ShootMBind or "None") .. "]"
-        pcall(function() if el.SetTitle then el:SetTitle(txt) else el.Title = txt end)
+        pcall(function() if el.SetTitle then el:SetTitle(txt) else el.Title = txt end end)
     end
     UI_Elements.Combat.ShootM = CombatTab:Button({ Title = T("ShootM") .. " [" .. (Config.Combat.ShootMBind or "None") .. "]", Callback = function()
         shootBindListening = true
