@@ -1,4 +1,4 @@
-﻿-- Bypasses Prometheus VM "newproxy" nil crashes on Delta/Solara
+-- Bypasses Prometheus VM "newproxy" nil crashes on Delta/Solara
 local gp = getgenv and getgenv() or _G
 if not gp.newproxy then
     gp.newproxy = function(bool)
